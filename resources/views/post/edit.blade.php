@@ -2,6 +2,7 @@
 
 @section('content')
 <h1>EDIT POSTS </h1> 
+@include('layouts.error-message')
 <form action="{{route('posts.update', $post->id)}}" method="post">
     @csrf
     

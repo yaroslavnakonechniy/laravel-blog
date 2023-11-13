@@ -2,6 +2,7 @@
 
 @section('content')
 <h1>CREATE NEW POST</h1> 
+@include('layouts.error-message')
 <form action="{{route('posts.store')}}" method="post">
     @csrf
   <div class="form-group">
