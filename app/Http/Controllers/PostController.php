@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
 use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
@@ -14,8 +15,8 @@ class PostController extends Controller
     }
 
     public function create(){
-        
-        return view('post.create');
+        $categories = Category::all();
+        return view('post.create', compact('categories'));
     }
 
     public function store(PostRequest $request){
@@ -23,6 +24,7 @@ class PostController extends Controller
 
         $post->title = $request->input('title');
         $post->content = $request->input('content');
+        $post->category_id = $request->input('category_id');
 
         $post->save();
         
@@ -32,12 +34,15 @@ class PostController extends Controller
     
     public function show($post_id){
         $post = Post::find($post_id);
-        return view('post.show', compact('post'));
+        $categories = Category::all();
+
+        return view('post.show', compact('post', 'categories'));
     }
 
     public function edit($post_id){
         $post = Post::find($post_id);
-        return view('post.edit', compact('post'));
+        $categories = Category::all();
+        return view('post.edit', compact('post', 'categories'));
     }
 
     public function update(PostRequest $request, $post_id){
@@ -45,7 +50,8 @@ class PostController extends Controller
 
         $post->title = $request->input('title');
         $post->content = $request->input('content');
-
+        $post->category_id = $request->input('category_id');
+        
         $post->save();
         
         return redirect()->route('posts.index')->with('success', 'Дані булo оновлено успішно');

@@ -9,10 +9,8 @@
 @foreach($posts as $post)
     <div class="alert alert-info">
         
-        <h3>{{ $post->id }}</h3>
-
         <p>{{ $post->title }}</p>
-        <p>{{ $post->content }}</p>
+        
         <a href="{{route('posts.show', $post->id)}}"><button class='btn btn-warning'>Детальніше</button></a>
 
     </div>
