@@ -5,6 +5,7 @@
 <a href="{{route('category.create')}}"><button type="button" class="btn btn-success">Create new category</button></a>
 
 @include('layouts.error-message')
+
 @foreach($categories as $category)
     <div class="alert alert-info">
         
