@@ -9,7 +9,7 @@ use App\Models\Category;
 class IndexController extends Controller
 {
     public function __invoke(){
-        $categories = Category::all();
+        $categories = Category::paginate(5);
         return view('category.index', compact('categories'));
     }
 
