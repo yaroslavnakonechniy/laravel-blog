@@ -6,14 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Http\Requests\CategoryRequest;
+use App\Http\Controllers\Category\BaseController;
 
-class StoreController extends Controller
+class StoreController extends BaseController
 {
     public function __invoke(CategoryRequest $req){
-        $category = new Category();
 
-        $category->title = $req->input('title');
-        $category->save();
+        $this->service->store($req);
 
         return redirect()->route('category.index')->with('success','Нову категорію було додано успішно');
     }

@@ -6,14 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Http\Controllers\Category\BaseController;
 
-class UpdateController extends Controller
+class UpdateController extends BaseController
 {
     public function __invoke(CategoryRequest $req, $category){
-        $category =  Category::find($category);
 
-        $category->title = $req->input('title');
-        $category->save();
+        $this->service->update($req, $category);
 
         return redirect()->route('category.index')->with('success','Категорію було оновлено успішно');
     }
