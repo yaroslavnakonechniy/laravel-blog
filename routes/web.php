@@ -37,13 +37,13 @@ Route::group(['namespace' => 'Category'], function () {
     Route::get('/category/{id}/delete', 'DestroyController')->name('category.destroy');
 });
 
+Route::group(['namespace' => 'Tag'], function () {
+    Route::get('/tag', 'IndexController')->name('tag.index');
+    Route::get('/tag/create', 'CreateController')->name('tag.create');
+    Route::post('tagy/store', 'StoreController')->name('tag.store');
+    Route::get('/tag/{id}/show', 'ShowController')->name('tag.show');
+    Route::get('/tag/{id}/edit', 'EditController')->name('tag.edit');
+    Route::post('tagy/{id}/update', 'UpdateController')->name('tag.update');
+    Route::get('/tag/{id}/delete', 'DestroyController')->name('tag.destroy');
+});
 
-
-
-Route::get('/tag', 'TagController@index')->name('tag.index');
-Route::get('/tag/create', 'TagController@create')->name('tag.create');
-Route::post('tagy/store', 'TagController@store')->name('tag.store');
-Route::get('/tag/{id}/show', 'TagController@show')->name('tag.show');
-Route::get('/tag/{id}/edit', 'TagController@edit')->name('tag.edit');
-Route::post('tagy/{id}/update', 'TagController@update')->name('tag.update');
-Route::get('/tag/{id}/delete', 'TagController@destroy')->name('tag.destroy');
