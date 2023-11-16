@@ -3,8 +3,6 @@
 namespace App\Services\Category;
 
 use App\Models\Category;
-use App\Http\Requests\PostRequest;
-use App\Http\Requests\TagRequest;
 
 class Service {
 

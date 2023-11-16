@@ -4,8 +4,6 @@ namespace App\Services\Post;
 
 use App\Models\Post; 
 use App\Models\Tag;
-use App\Http\Requests\PostRequest;
-use App\Http\Requests\TagRequest;
 
 class Service {
 
