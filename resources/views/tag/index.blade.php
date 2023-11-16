@@ -18,4 +18,8 @@
 
 @endforeach
 
+    <div>
+        {{$tags->links()}}
+    </div>
+
 @endsection

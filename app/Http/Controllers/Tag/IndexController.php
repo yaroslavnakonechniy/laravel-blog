@@ -9,7 +9,7 @@ use App\Models\Tag;
 class IndexController extends Controller
 {
     public function __invoke(){
-        $tags = Tag::all();
+        $tags = Tag::paginate(5);
         return view('tag.index', compact('tags'));
     }
 
