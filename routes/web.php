@@ -27,14 +27,18 @@ Route::group(['namespace' => 'Post'], function (){
     Route::get('/posts/{id}/delete', 'DestroyController')->name('posts.destroy');
 });
 
+Route::group(['namespace' => 'Category'], function () {
+    Route::get('/category', 'IndexController')->name('category.index');
+    Route::get('/category/create', 'CreateController')->name('category.create');
+    Route::post('/category/store', 'StoreController')->name('category.store');
+    Route::get('/category/{id}/show', 'ShowController')->name('category.show');
+    Route::get('/category/{id}/edit', 'EditController')->name('category.edit');
+    Route::post('/category/{id}/update', 'UpdateController')->name('category.update');
+    Route::get('/category/{id}/delete', 'DestroyController')->name('category.destroy');
+});
 
-Route::get('/category', 'CategoryController@index')->name('category.index');
-Route::get('/category/create', 'CategoryController@create')->name('category.create');
-Route::post('/category/store', 'CategoryController@store')->name('category.store');
-Route::get('/category/{id}/show', 'CategoryController@show')->name('category.show');
-Route::get('/category/{id}/edit', 'CategoryController@edit')->name('category.edit');
-Route::post('/category/{id}/update', 'CategoryController@update')->name('category.update');
-Route::get('/category/{id}/delete', 'CategoryController@destroy')->name('category.destroy');
+
+
 
 Route::get('/tag', 'TagController@index')->name('tag.index');
 Route::get('/tag/create', 'TagController@create')->name('tag.create');
