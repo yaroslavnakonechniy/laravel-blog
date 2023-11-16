@@ -17,13 +17,16 @@ Route::get('/', function () {
     return view('layouts.main');
 });
 
-Route::get('/posts', 'PostController@index')->name('posts.index');
-Route::get('/posts/create', 'PostController@create')->name('posts.create');
-Route::post('/posts/store', 'PostController@store')->name('posts.store');
-Route::get('/posts/{id}/show', 'PostController@show')->name('posts.show');
-Route::get('/posts/{id}/edit', 'PostController@edit')->name('posts.edit');
-Route::post('/posts/{id}/update', 'PostController@update')->name('posts.update');
-Route::get('/posts/{id}/delete', 'PostController@destroy')->name('posts.destroy');
+Route::group(['namespace' => 'Post'], function (){
+    Route::get('/posts', 'IndexController')->name('posts.index');
+    Route::get('/posts/create', 'CreateController')->name('posts.create');
+    Route::post('/posts/store', 'StoreController')->name('posts.store');
+    Route::get('/posts/{id}/show', 'ShowController')->name('posts.show');
+    Route::get('/posts/{id}/edit', 'EditController')->name('posts.edit');
+    Route::post('/posts/{id}/update', 'UpdateController')->name('posts.update');
+    Route::get('/posts/{id}/delete', 'DestroyController')->name('posts.destroy');
+});
+
 
 Route::get('/category', 'CategoryController@index')->name('category.index');
 Route::get('/category/create', 'CategoryController@create')->name('category.create');
