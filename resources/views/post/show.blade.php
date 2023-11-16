@@ -13,7 +13,20 @@
         @foreach($categories as $category)             
              {{$category->id === $post->category_id ?  $category->title  : '' }}
         @endforeach
-    </b></p>
+    </b></p> 
+    <div class="form-group">
+    <label for="tag">tag: </label>
+    <select multiple class="form-select" aria-label="Default select example" name="tag_id[]" >
+      @foreach($tags as $tag)
+        <option 
+        >@foreach($post->tags as $postTag)
+            {{$tag->id === $postTag->id ? $tag->title : '' }}
+          @endforeach
+        </option>
+      @endforeach
+    </select>
+  </div>
+
         <a href="{{route('posts.edit', $post->id)}}"><button class='btn btn-warning'>Edit</button></a>
         <a href="{{route('posts.destroy', $post->id)}}"><button class='btn btn-danger'>Delete</button></a>
 
