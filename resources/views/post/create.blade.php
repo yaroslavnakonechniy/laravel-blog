@@ -21,6 +21,14 @@
       @endforeach
     </select>
   </div>
+  <div class="form-group">
+    <label for="tag">Tag</label>
+    <select multiple class="form-select" aria-label="Default select example" name="tag_id[]" >
+      @foreach($tags as $tag)
+        <option value="{{$tag->id}}">{{$tag->title}}</option>
+      @endforeach
+    </select>
+  </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
