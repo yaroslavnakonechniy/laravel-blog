@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('posts')
+@section('content')
 <h1> SHOW POST </h1> 
 
     <div class="alert alert-info">

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('posts')
+@section('content')
 
 <h1> POSTS </h1> 
 <a href="{{route('admin.posts.create')}}"><button type="button" class="btn btn-success">Create new post</button></a>

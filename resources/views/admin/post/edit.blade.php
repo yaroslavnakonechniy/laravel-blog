@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('posts')
+@section('content')
 <h1>EDIT POSTS </h1> 
 @include('layouts.error-message')
 <form action="{{route('admin.posts.update', $post->id)}}" method="post">
