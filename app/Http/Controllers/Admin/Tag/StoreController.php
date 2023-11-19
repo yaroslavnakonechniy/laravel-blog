@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Tag;
+namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ class StoreController extends BaseController
 
         $this->service->store($req);
 
-        return redirect()->route('tag.index')->with('success', 'Новий тег було додано успішно');
+        return redirect()->route('admin.tag.index')->with('success', 'Новий тег було додано успішно');
     }
 
 }

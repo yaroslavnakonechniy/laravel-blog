@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Tag;
+namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -13,6 +13,6 @@ class DestroyController extends Controller
 
         $tag->delete();
 
-        return redirect()->route('tag.index')->with('success', 'Тег було видалено успішно');
+        return redirect()->route('admin.tag.index')->with('success', 'Тег було видалено успішно');
     }
 }

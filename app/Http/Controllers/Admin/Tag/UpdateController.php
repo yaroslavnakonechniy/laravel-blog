@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Tag;
+namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,6 +14,6 @@ class UpdateController extends BaseController
 
         $this->service->update($req, $tag_id);
 
-        return redirect()->route('tag.index')->with('success', 'Тег було оновлено успішно');
+        return redirect()->route('admin.tag.index')->with('success', 'Тег було оновлено успішно');
     }
 }
