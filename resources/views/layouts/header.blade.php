@@ -14,6 +14,9 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('tag.index')}}">Tags</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('main.index')}}">Admin</a>
+      </li>
     </ul>
   </div>
 </nav>

@@ -2,7 +2,7 @@
 
 @section('content')
 <h1> POSTS </h1> 
-<a href="{{route('posts.create')}}"><button type="button" class="btn btn-success">Create new post</button></a>
+
 
 @include('layouts.error-message')
 
