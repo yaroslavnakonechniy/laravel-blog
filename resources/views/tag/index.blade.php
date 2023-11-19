@@ -2,7 +2,6 @@
 
 @section('content')
 <h1> Tags </h1> 
-<a href="{{route('tag.create')}}"><button type="button" class="btn btn-success">Create new tag</button></a>
 
 @include('layouts.error-message')
 

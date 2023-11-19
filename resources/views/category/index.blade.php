@@ -2,7 +2,6 @@
 
 @section('content')
 <h1> Categories </h1> 
-<a href="{{route('category.create')}}"><button type="button" class="btn btn-success">Create new category</button></a>
 
 @include('layouts.error-message')
 
