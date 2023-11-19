@@ -19,12 +19,12 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'Post'], function (){
     Route::get('/posts', 'IndexController')->name('posts.index');
-    Route::get('/posts/create', 'CreateController')->name('posts.create');
-    Route::post('/posts/store', 'StoreController')->name('posts.store');
+    //Route::get('/posts/create', 'CreateController')->name('posts.create');
+    //Route::post('/posts/store', 'StoreController')->name('posts.store');
     Route::get('/posts/{id}/show', 'ShowController')->name('posts.show');
-    Route::get('/posts/{id}/edit', 'EditController')->name('posts.edit');
-    Route::post('/posts/{id}/update', 'UpdateController')->name('posts.update');
-    Route::get('/posts/{id}/delete', 'DestroyController')->name('posts.destroy');
+    //Route::get('/posts/{id}/edit', 'EditController')->name('posts.edit');
+    //Route::post('/posts/{id}/update', 'UpdateController')->name('posts.update');
+    //Route::get('/posts/{id}/delete', 'DestroyController')->name('posts.destroy');
 });
 
 Route::group(['namespace' => 'Category'], function () {
@@ -47,3 +47,18 @@ Route::group(['namespace' => 'Tag'], function () {
     Route::get('/tag/{id}/delete', 'DestroyController')->name('tag.destroy');
 });
 
+Route::get('/admin', 'MainController@index')->name('main.index');
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+    Route::group(['namespace' => 'Post'], function () {
+        Route::get('/posts', 'IndexController')->name('admin.posts.index');
+        Route::get('/posts/create', 'CreateController')->name('admin.posts.create');
+        Route::post('/posts/store', 'StoreController')->name('admin.posts.store');
+        Route::get('/posts/{id}/show', 'ShowController')->name('admin.posts.show');
+        Route::get('/posts/{id}/edit', 'EditController')->name('admin.posts.edit');
+        Route::post('/posts/{id}/update', 'UpdateController')->name('admin.posts.update');
+        Route::get('/posts/{id}/delete', 'DestroyController')->name('admin.posts.destroy');
+
+    });
+
+});
