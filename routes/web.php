@@ -39,12 +39,12 @@ Route::group(['namespace' => 'Category'], function () {
 
 Route::group(['namespace' => 'Tag'], function () {
     Route::get('/tag', 'IndexController')->name('tag.index');
-    Route::get('/tag/create', 'CreateController')->name('tag.create');
-    Route::post('tagy/store', 'StoreController')->name('tag.store');
+    //Route::get('/tag/create', 'CreateController')->name('tag.create');
+    //Route::post('tagy/store', 'StoreController')->name('tag.store');
     Route::get('/tag/{id}/show', 'ShowController')->name('tag.show');
-    Route::get('/tag/{id}/edit', 'EditController')->name('tag.edit');
-    Route::post('tagy/{id}/update', 'UpdateController')->name('tag.update');
-    Route::get('/tag/{id}/delete', 'DestroyController')->name('tag.destroy');
+    //Route::get('/tag/{id}/edit', 'EditController')->name('tag.edit');
+    //Route::post('tagy/{id}/update', 'UpdateController')->name('tag.update');
+    //Route::get('/tag/{id}/delete', 'DestroyController')->name('tag.destroy');
 });
 
 Route::get('/admin', 'MainController@index')->name('main.index');
@@ -69,6 +69,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('/category/{id}/edit', 'EditController')->name('admin.category.edit');
         Route::post('/category/{id}/update', 'UpdateController')->name('admin.category.update');
         Route::get('/category/{id}/delete', 'DestroyController')->name('admin.category.destroy');
+    });
+
+    Route::group(['namespace' => 'Tag'], function () {
+        Route::get('/tag', 'IndexController')->name('admin.tag.index');
+        Route::get('/tag/create', 'CreateController')->name('admin.tag.create');
+        Route::post('tagy/store', 'StoreController')->name('admin.tag.store');
+        Route::get('/tag/{id}/show', 'ShowController')->name('admin.tag.show');
+        Route::get('/tag/{id}/edit', 'EditController')->name('admin.tag.edit');
+        Route::post('tag/{id}/update', 'UpdateController')->name('admin.tag.update');
+        Route::get('/tag/{id}/delete', 'DestroyController')->name('admin.tag.destroy');
     });
 
 });
