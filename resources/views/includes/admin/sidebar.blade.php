@@ -18,6 +18,13 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('admin.tag.index')}}" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>Tag</p>
+              <span class="badge badge-info right">  </span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Informational</p>
