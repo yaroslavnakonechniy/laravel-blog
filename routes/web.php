@@ -29,12 +29,12 @@ Route::group(['namespace' => 'Post'], function (){
 
 Route::group(['namespace' => 'Category'], function () {
     Route::get('/category', 'IndexController')->name('category.index');
-    Route::get('/category/create', 'CreateController')->name('category.create');
-    Route::post('/category/store', 'StoreController')->name('category.store');
+    //Route::get('/category/create', 'CreateController')->name('category.create');
+    //Route::post('/category/store', 'StoreController')->name('category.store');
     Route::get('/category/{id}/show', 'ShowController')->name('category.show');
-    Route::get('/category/{id}/edit', 'EditController')->name('category.edit');
-    Route::post('/category/{id}/update', 'UpdateController')->name('category.update');
-    Route::get('/category/{id}/delete', 'DestroyController')->name('category.destroy');
+    //Route::get('/category/{id}/edit', 'EditController')->name('category.edit');
+    //Route::post('/category/{id}/update', 'UpdateController')->name('category.update');
+    //Route::get('/category/{id}/delete', 'DestroyController')->name('category.destroy');
 });
 
 Route::group(['namespace' => 'Tag'], function () {
@@ -59,6 +59,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::post('/posts/{id}/update', 'UpdateController')->name('admin.posts.update');
         Route::get('/posts/{id}/delete', 'DestroyController')->name('admin.posts.destroy');
 
+    });
+
+    Route::group(['namespace' => 'Category'], function () {
+        Route::get('/category', 'IndexController')->name('admin.category.index');
+        Route::get('/category/create', 'CreateController')->name('admin.category.create');
+        Route::post('/category/store', 'StoreController')->name('admin.category.store');
+        Route::get('/category/{id}/show', 'ShowController')->name('admin.category.show');
+        Route::get('/category/{id}/edit', 'EditController')->name('admin.category.edit');
+        Route::post('/category/{id}/update', 'UpdateController')->name('admin.category.update');
+        Route::get('/category/{id}/delete', 'DestroyController')->name('admin.category.destroy');
     });
 
 });
