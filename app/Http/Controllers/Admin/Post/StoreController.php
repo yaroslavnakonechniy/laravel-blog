@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ class StoreController extends BaseController
 
         $this->service->store($request, $tag_req);
 
-        return redirect()->route('posts.index')->with('success', 'Дані булo додано успішно');
+        return redirect()->route('admin.posts.index')->with('success', 'Дані булo додано успішно');
 
     }
 

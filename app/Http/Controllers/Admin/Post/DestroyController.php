@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,6 +12,6 @@ class DestroyController extends Controller
         $post = Post::find($post_id);
         $post->delete();
 
-        return redirect()->route('posts.index')->with('success', 'Дані булo видалено успішно');
+        return redirect()->route('admin.posts.index')->with('success', 'Дані булo видалено успішно');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ class UpdateController extends BaseController
 
         $this->service->update($request, $tag_req, $post_id);
         
-        return redirect()->route('posts.index')->with('success', 'Дані булo оновлено успішно');
+        return redirect()->route('admin.posts.index')->with('success', 'Дані булo оновлено успішно');
 
     }
 
