@@ -235,7 +235,7 @@
     <section class="content">
         <div class="container-fluid">
             
-            @yield('posts')
+            @yield('content')
         </div>
     </section>
     <!-- /.content -->

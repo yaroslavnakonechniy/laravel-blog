@@ -11,6 +11,13 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('admin.category.index')}}" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>Category</p>
+              <span class="badge badge-info right">  </span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Informational</p>

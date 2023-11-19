@@ -9,10 +9,6 @@
 
         <p>{{ $category->title }}</p>
         
-        <a href="{{route('category.edit', $category->id)}}"><button class='btn btn-warning'>Edit</button></a>
-        <a href="{{route('category.destroy', $category->id)}}"><button class='btn btn-danger'>Delete</button></a>
-
-
     </div>
 
 @endsection
