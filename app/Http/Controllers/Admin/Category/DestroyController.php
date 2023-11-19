@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Admin\Category;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,6 +12,6 @@ class DestroyController extends Controller
         $category =  Category::find($category);
         $category->delete();
 
-        return redirect()->route('category.index')->with('success','Категорію було видалено успішно');
+        return redirect()->route('admin.category.index')->with('success','Категорію було видалено успішно');
     }
 }

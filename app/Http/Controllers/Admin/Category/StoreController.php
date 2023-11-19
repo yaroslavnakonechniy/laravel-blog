@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Admin\Category;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class StoreController extends BaseController
 
         $this->service->store($req);
 
-        return redirect()->route('category.index')->with('success','Нову категорію було додано успішно');
+        return redirect()->route('admin.category.index')->with('success','Нову категорію було додано успішно');
     }
 
 }
