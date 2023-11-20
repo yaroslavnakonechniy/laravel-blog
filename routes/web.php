@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.main');
 });
+Route::get('/', 'HomeController@index')->name('home');
+
 
 Route::group(['namespace' => 'Post'], function (){
     Route::get('/posts', 'IndexController')->name('posts.index');
@@ -49,7 +51,7 @@ Route::group(['namespace' => 'Tag'], function () {
 
 Route::get('/admin', 'MainController@index')->name('main.index');
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::group(['namespace' => 'Post'], function () {
         Route::get('/posts', 'IndexController')->name('admin.posts.index');
         Route::get('/posts/create', 'CreateController')->name('admin.posts.create');
@@ -82,3 +84,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     });
 
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
