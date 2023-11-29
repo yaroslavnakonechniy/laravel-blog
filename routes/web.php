@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Tag'], function () {
 Route::group(['namespace' => 'File'], function () {
     Route::get('/file', 'IndexController')->name('file.index');
     Route::get('/file/{id}/show', 'ShowController')->name('file.show');
+    Route::get('/file/{id}/download', 'DownloadController')->name('file.download');
 });
 
 Route::get('/admin', 'MainController@index')->name('main.index');
