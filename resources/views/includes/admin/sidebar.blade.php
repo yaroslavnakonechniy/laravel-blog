@@ -25,9 +25,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>Informational</p>
+            <a href="{{route('admin.file.index')}}" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>File</p>
+              <span class="badge badge-info right">  </span>
             </a>
           </li>
         </ul>
